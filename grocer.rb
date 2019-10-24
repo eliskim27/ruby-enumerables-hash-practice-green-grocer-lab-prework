@@ -53,6 +53,9 @@ def checkout(cart, coupons)
   c_cart_w_coupons_and_clearance.keys.each do |item|
     total += c_cart_w_coupons_and_clearance[item][:price] * c_cart_w_coupons_and_clearance[item][:count]
   end
+  if total >= 100
+    total = total * 1.1
+  end
   total
 end
 
