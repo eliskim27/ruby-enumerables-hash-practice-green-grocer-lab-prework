@@ -50,8 +50,8 @@ def checkout(cart, coupons)
   c_cart_w_coupons = apply_coupons(checkout_cart, coupons)
   c_cart_w_coupons_and_clearance = apply_clearance(c_cart_w_coupons)
   total = 0
-  cart.keys.each do |item|
-    total += cart[item][:price] * cart[item][:count]
+  c_cart_w_coupons_and_clearance.keys.each do |item|
+    total += c_cart_w_coupons_and_clearance[item][:price] * c_cart_w_coupons_and_clearance[item][:count]
   end
   total
 end
